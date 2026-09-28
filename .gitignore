@@ -1,0 +1,5 @@
+*.zip
+*.log
+*.redscripts
+__pycache__/
+.DS_Store

@@ -1,0 +1,73 @@
+# Recovery time near 0.5 seconds for Tier 5 throwable weapons.
+# Based on CurrentFasterKnives weapon coverage; no damage/stat bonuses changed.
+# Install at Cyberpunk 2077/r6/tweaks/FasterKnives_RecoveryOnly.yaml
+# Do not load the supplied source mods together with this file.
+# Positive multipliers avoid the infinite-cooldown risk of negative recovery.
+
+projectile.knife_params.startVelocity: 220
+projectile.Axe_params.startVelocity: 220
+
+NewFasterKnives_KnifeRecovery:
+    $type: gamedataConstantStatModifier_Record
+    modifierType: Multiplier
+    statType: BaseStats.ThrowRecovery
+    value: 0.18
+
+NewFasterKnives_TantoRecovery:
+    $type: gamedataConstantStatModifier_Record
+    modifierType: Multiplier
+    statType: BaseStats.ThrowRecovery
+    value: 0.10
+
+NewFasterKnives_ChefRecovery:
+    $type: gamedataConstantStatModifier_Record
+    modifierType: Multiplier
+    statType: BaseStats.ThrowRecovery
+    value: 0.12
+
+NewFasterKnives_PunkRecovery:
+    $type: gamedataConstantStatModifier_Record
+    modifierType: Multiplier
+    statType: BaseStats.ThrowRecovery
+    value: 0.40
+
+NewFasterKnives_BlueFangRecovery:
+    $type: gamedataConstantStatModifier_Record
+    modifierType: Multiplier
+    statType: BaseStats.ThrowRecovery
+    value: 0.06
+
+NewFasterKnives_HeadhunterRecovery:
+    $type: gamedataConstantStatModifier_Record
+    modifierType: Multiplier
+    statType: BaseStats.ThrowRecovery
+    value: 0.14
+
+NewFasterKnives_AgaouRecovery:
+    $type: gamedataConstantStatModifier_Record
+    modifierType: Multiplier
+    statType: BaseStats.ThrowRecovery
+    value: 0.05
+
+Items.Preset_Neurotoxin_Knife_Default:
+    statModifiers: [ !append-once NewFasterKnives_KnifeRecovery ]
+Items.Preset_Punk_Knife_Default:
+    statModifiers: [ !append-once NewFasterKnives_PunkRecovery ]
+Items.Preset_Chefs_Knife_Default:
+    statModifiers: [ !append-once NewFasterKnives_ChefRecovery ]
+Items.Preset_Tanto_Default:
+    statModifiers: [ !append-once NewFasterKnives_TantoRecovery ]
+Items.Preset_Knife_Default:
+    statModifiers: [ !append-once NewFasterKnives_KnifeRecovery ]
+Items.Preset_Combat_Knife_Default:
+    statModifiers: [ !append-once NewFasterKnives_KnifeRecovery ]
+Items.Preset_VB_Axe:
+    statModifiers: [ !append-once NewFasterKnives_AgaouRecovery ]
+Items.Preset_Neurotoxin_Knife_Iconic:
+    statModifiers:
+      - !remove NewFasterKnives_KnifeRecovery
+      - !append-once NewFasterKnives_BlueFangRecovery
+Items.Preset_Punk_Knife_Iconic:
+    statModifiers:
+      - !remove NewFasterKnives_PunkRecovery
+      - !append-once NewFasterKnives_HeadhunterRecovery
